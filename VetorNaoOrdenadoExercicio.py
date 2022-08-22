@@ -12,11 +12,14 @@ class VetorNaoOrdenado:
                 print(i, ' - ', self.valores[i])
 
     def insere(self,valor):
-        for i in range(self.ultima_posicao + 1):
-            if valor == self.valores[i]:
-                return 
-        self.ultima_posicao = self.ultima_posicao + 1
-        self.valores[self.ultima_posicao] = valor
+        if self.ultima_posicao == self.capacidade -1:
+            print("Capacidade maxima atingida")
+        else:            
+            for i in range(self.ultima_posicao + 1):
+                if valor == self.valores[i]:
+                    return 
+            self.ultima_posicao = self.ultima_posicao + 1
+            self.valores[self.ultima_posicao] = valor
             
         
     def pesquisa(self, valor):
@@ -47,4 +50,7 @@ vetor.insere(7)
 vetor.insere(4)
 vetor.insere(1)
 vetor.insere(2)
+vetor.insere(3)
+vetor.insere(8)
+vetor.insere(9)
 vetor.imprime()
